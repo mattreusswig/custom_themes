@@ -2,6 +2,14 @@
 # I built my own versions since his package isn't currently on CRAN
 # https://github.com/clauswilke/colorblindr/ 
 
+scale_color_base<- function(aesthetics = "color", ...) {
+  scale_base(aesthetics, ...)
+}
+
+scale_fill_base <- function(aesthetics = "fill", ...) {
+  scale_base(aesthetics, ...)
+}
+
 scale_color_OkabeIto <- function(aesthetics = "color", ...) {
   scale_OkabeIto(aesthetics, ...)
 }
@@ -31,7 +39,7 @@ scale_OkabeIto <- function(aesthetics, use_black = FALSE, order = 1:8, ...) {
   ggplot2::discrete_scale(aesthetics, "manual", pal, ...)
 }
 
-scale_color_base <- function(aesthetics, use_black = FALSE, order = 1:8, ...) {
+scale_base <- function(aesthetics, use_black = FALSE, order = 1:8, ...) {
   
   if (use_black) {
     values <- palette_OkabeIto_black[order]
