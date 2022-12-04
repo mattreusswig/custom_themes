@@ -18,7 +18,7 @@ ggplot(dd) +
   scale_y_log10(breaks = scales::trans_breaks("log10", function(x) 10^x),
                 labels = scales::trans_format("log10", scales::math_format(10^.x))) +
   facet_wrap(~Permittee, scales = "free_x") +
-  scale_color_OkabeIto("fill") +
+  scale_color_grad("fill") +
   # scale_color_base("fill") +
   labs(caption = "Copper") +
-  theme_base()
+  theme_base(facet_color = "orange")
